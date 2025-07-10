@@ -1,0 +1,42 @@
+import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.border.Border;
+
+public class life {
+    public static void main(String args[])
+    {
+        ImageIcon img=new ImageIcon("new.png");
+        Border border=BorderFactory.createLineBorder(Color.blue,10);
+
+        JLabel label=new JLabel();
+        label.setText("It is my Panels");
+        label.setIcon(img);
+        label.setHorizontalTextPosition(JLabel.CENTER);
+        label.setVerticalTextPosition(JLabel.TOP);
+        label.setForeground(new Color(0x000FA));
+        label.setFont(new Font("MV Boli",Font.BOLD,35));
+        // label.setIconTextGap(-20);
+        label.setBackground(Color.black);
+        label.setBorder(border);
+        label.setHorizontalAlignment(JLabel.CENTER);
+        label.setVerticalAlignment(JLabel.CENTER);
+        label.setOpaque(true);
+        //label.setBounds(0,0,250,250);
+
+
+
+        JFrame frame=new JFrame();
+        //frame.setSize(500,500);
+        frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+        //frame.setLayout(null);
+        frame.add(label);
+        frame.pack();
+        
+    }
+}
