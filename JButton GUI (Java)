@@ -1,0 +1,67 @@
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class demo1 extends JFrame implements ActionListener{
+    JButton jb;
+    JLabel jb1;
+    JButton jb3;
+    demo1()
+    {
+        ImageIcon image=new ImageIcon("OIP.png");
+        ImageIcon image1=new ImageIcon("OIP.jpg");
+
+        jb1=new JLabel();
+        jb1.setIcon(image1);
+        jb1.setBounds(150,250,150,100);
+        jb1.setVisible(false);
+
+        jb=new JButton();
+        jb.setBounds(200,100,250,100);
+        jb.setText("Click me");
+        jb.setFocusable(false);
+        jb.setIcon(image);
+        jb.setHorizontalTextPosition(JButton.CENTER);
+        jb.setVerticalTextPosition(JButton.BOTTOM);
+        jb.setFont(new Font("Cosmic storm",Font.BOLD,20));
+        jb.setForeground(Color.CYAN);
+        jb.setBackground(Color.LIGHT_GRAY);
+        jb.setBorder(BorderFactory.createEtchedBorder());
+        jb.addActionListener(this);
+
+        jb3=new JButton();
+        jb3.setBounds(0,0,100,100);
+        jb3.setText("click me to go back");
+        jb3.setFocusable(false);
+        jb3.setBorder(BorderFactory.createEtchedBorder());
+        jb3.addActionListener(this);
+
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setLayout(null);
+        this.setSize(500,500);
+        this.setVisible(true);
+        this.add(jb);
+        this.add(jb1);
+        this.add(jb3);
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+       if(e.getSource()==jb)
+       {
+            jb1.setVisible(true);
+       }
+       if(e.getSource()==jb3)
+       {
+            jb1.setVisible(false);
+       }
+       
+    }
+    
+}
